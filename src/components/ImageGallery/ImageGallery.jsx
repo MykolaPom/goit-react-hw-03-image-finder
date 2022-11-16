@@ -1,17 +1,16 @@
 import { Component } from 'react';
 import PropTypes from 'prop-types';
+import { ImageGalleryStyled } from './ImageGallery.styled'
 import { ImageGalleryItem } from 'components/ImageGalleryItem/ImageGalleryItem';
-// import css from './ImageGallery.module.css';
 
 export class ImageGallery extends Component {
   render() {
     const queryArr = this.props.queryArr;
 
     return (
-      // <div className={css.wrapper}>
-      //   <ul className={css.gallery}>
+
       <div>
-        <ul>
+        <ImageGalleryStyled>
           {queryArr.map(({ id, webformatURL, largeImageURL, tags }) => (
             <ImageGalleryItem
               key={id}
@@ -21,7 +20,7 @@ export class ImageGallery extends Component {
               click={this.props.click}
             />
           ))}
-        </ul>
+        </ImageGalleryStyled>
       </div>
     );
   }

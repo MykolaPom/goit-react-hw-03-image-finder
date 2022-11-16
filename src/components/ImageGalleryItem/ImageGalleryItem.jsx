@@ -1,4 +1,8 @@
-// import css from './ImageGalleryItem.module.css';
+import {
+  ImageGalleryItemStyled,
+  ImageGalleryItemImageStyled,
+} from './ImageGalleryItem.styled';
+
 import PropTypes from 'prop-types';
 
 export const ImageGalleryItem = ({
@@ -8,15 +12,13 @@ export const ImageGalleryItem = ({
   click,
 }) => {
   return (
-    <li
-      // className={css.item}
+    <ImageGalleryItemStyled
       onClick={() => {
         click(largeImageURL);
       }}
     >
-      {/* <img className={css.itemImage} src={webformatURL} alt={tags} /> */}
-      <img src={webformatURL} alt={tags} />
-    </li>
+      <ImageGalleryItemImageStyled src={webformatURL} alt={tags} />
+    </ImageGalleryItemStyled>
   );
 };
 

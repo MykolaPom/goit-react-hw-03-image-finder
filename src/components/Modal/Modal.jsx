@@ -1,5 +1,5 @@
 import { Component } from 'react';
-// import css from './Modal.module.css';
+import { ModalStyled, OverlayStyled } from './Modal.styled';
 import PropTypes from 'prop-types';
 
 export class Modal extends Component {
@@ -24,13 +24,11 @@ export class Modal extends Component {
 
   render() {
     return (
-      // <div className={css.overlay} onClick={this.backDropClick}>
-      //   <div className={css.modal}>
-      <div onClick={this.backDropClick}>
-        <div>
+      <OverlayStyled onClick={this.backDropClick}>
+        <ModalStyled>
           <img src={this.props.src} alt="" />
-        </div>
-      </div>
+        </ModalStyled>
+      </OverlayStyled>
     );
   }
 }

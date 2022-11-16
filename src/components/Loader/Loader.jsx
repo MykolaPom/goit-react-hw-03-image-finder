@@ -1,26 +1,19 @@
-import { Oval } from 'react-loader-spinner';
-// import css from './Loader.module.css';
+import { Vortex } from 'react-loader-spinner';
+import { LoaderStyled, LoaderTitle } from './Loader.styled'
 
 export const Loader = () => {
   return (
-    // <div className={css.spiner}>
-    <div>
-      <Oval
-        height={40}
-        width={40}
-        color="#ff9d00"
-        wrapperStyle={{}}
-        // wrapperClass={css.spinerItem}
+    <LoaderStyled>
+      <Vortex
         visible={true}
-        ariaLabel="oval-loading"
-        secondaryColor="#faba54"
-        strokeWidth={3}
-        strokeWidthSecondary={4}
+        height="80"
+        width="80"
+        ariaLabel="vortex-loading"
+        wrapperStyle={{}}
+        wrapperClass="vortex-wrapper"
+        colors={['red', 'green', 'blue', 'yellow', 'orange', 'purple']}
       />
-      {/* <p className={css.title}> */}
-      <p>
-        Please wait ...
-      </p>
-    </div>
+      <LoaderTitle>Please wait ...</LoaderTitle>
+    </LoaderStyled>
   );
 };

@@ -1,14 +1,13 @@
 import { Component } from 'react';
-// import css from './Button.module.css';
+import { LoadMoreButtonStyled } from './ButtonStyled'
 import PropTypes from 'prop-types';
 
 export class Button extends Component {
   render() {
     return (
-      // <button type="button" className={css.button} onClick={this.props.onClick}>
-      <button type="button" onClick={this.props.onClick}>
+      <LoadMoreButtonStyled type="button" onClick={this.props.onClick}>
         Load more
-      </button>
+      </LoadMoreButtonStyled>
     );
   }
 }

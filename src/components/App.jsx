@@ -2,7 +2,7 @@ import { Component } from 'react';
 import { ToastContainer } from 'react-toastify';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-// import css from './App.module.css';
+import { AppStyled, IddleTitle } from './App.styled';
 import axios from 'axios';
 
 import { Button } from './Button/Button';
@@ -64,8 +64,6 @@ export class App extends Component {
     }
   }
 
-  // servise
-
   clearStateFn = () => {
     this.setState({
       queryArr: [],
@@ -99,8 +97,7 @@ export class App extends Component {
   render() {
     const { queryArr, status, showModal, srcModal, totalImg } = this.state;
     return (
-      // <div className={css.appStyle}>
-      <div>
+      <AppStyled>
         {showModal && <Modal src={srcModal} close={this.toggleModal} />}
 
         <Searchbar submitEvt={this.submitEvent} />
@@ -110,10 +107,9 @@ export class App extends Component {
         )}
 
         {(status === 'idle' || !queryArr) && (
-          // <div className={css.idleTitle}>
-          <div>
+          <IddleTitle>
             Please, enter your query ...
-          </div>
+          </IddleTitle>
         )}
 
         {status === 'pending' && <Loader />}
@@ -123,7 +119,7 @@ export class App extends Component {
         )}
 
         <ToastContainer autoClose={2000} position={'top-left'} />
-      </div>
+      </AppStyled>
     );
   }
 }
